@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import Todo from './components/Todo'
+import SignupComponent from './components/SignupComponent';
+import SigninComponent from './components/SigninComponent';
+import { HashRouter, Route, Routes } from 'react-router-dom'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    return (
+        <HashRouter>
+
+            <Routes>
+                <Route path='/' Component={Todo} />
+                <Route path='/signup' Component={SignupComponent} />
+                <Route path='/signin' Component={SigninComponent} />
+            </Routes>
+        </HashRouter>
+    );
 }
 
 export default App;
