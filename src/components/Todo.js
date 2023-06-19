@@ -2,7 +2,6 @@ import react, { useState, useEffect } from 'react'
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.css';
 
-
 function Todo() {
 
     const [todos, setTodos] = useState([]);
@@ -79,7 +78,7 @@ function Todo() {
             });
     }
     return (
-        <div className='container' >
+        <div className='bg-custom container' >
             <h1 className='mt-4' >Todo list</h1>
             <input
                 type="text"
@@ -88,11 +87,11 @@ function Todo() {
                 placeholder="Add a new todo"
                 onChange={(e) => setNewTodo(e.target.value)}
             />
-            <button className='btn btn-primary' onClick={addTodo}>Add</button>
+            <button style={{ marginTop: '10px' }} className='btn btn-primary' onClick={addTodo}>Add</button>
             <ul className='list-group' >
                 {todos &&
                     todos.map((todo, index) => (
-                        <li className='list-group-item d-flex align-items-center' key={todo._id}>
+                        <li style={{ marginTop: '10px' }} className='list-group-item d-flex align-items-center' key={todo._id}>
                             {editTodoId === todo._id ? (
                                 <input
                                     className='form-control'
@@ -112,8 +111,9 @@ function Todo() {
                         </li>
                     ))}
             </ul>
-        </div>
+        </div >
     )
 }
+
 
 export default Todo;

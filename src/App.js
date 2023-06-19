@@ -9,9 +9,9 @@ function App() {
         <HashRouter>
 
             <Routes>
-                <Route path='/' Component={Todo} />
+                <Route path='/todos' Component={Todo} />
                 <Route path='/signup' Component={SignupComponent} />
-                <Route path='/signin' Component={SigninComponent} />
+                <Route path='/' Component={SigninComponent} />
             </Routes>
         </HashRouter>
     );

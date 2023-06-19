@@ -22,7 +22,7 @@ const SigninComponent = () => {
             });
 
 
-            navigate('/')
+            navigate('/todos')
             console.log(response.data);
         } catch (err) {
             console.log('error', err);
@@ -32,34 +32,45 @@ const SigninComponent = () => {
         setPassword('');
     };
 
+    const signUp = () => {
+        return (
+            navigate('/signup')
+        )
+    }
+
     return (
-        <form onSubmit={handleSubmit}>
-            <div className="form-group">
-                <label htmlFor="email">Email</label>
-                <input
-                    type="email"
-                    className="form-control"
-                    id="email"
-                    placeholder="Enter email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-            </div>
+        <div >
+            <form onSubmit={handleSubmit}>
+                <div className="form-group">
+                    <label htmlFor="email">Email</label>
+                    <input
+                        type="email"
+                        className="form-control"
+                        id="email"
+                        placeholder="Enter email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                </div>
 
-            <div className="form-group">
-                <label htmlFor="password">Password</label>
-                <input
-                    type="password"
-                    className="form-control"
-                    id="password"
-                    placeholder="Enter password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-            </div>
+                <div className="form-group">
+                    <label htmlFor="password">Password</label>
+                    <input
+                        type="password"
+                        className="form-control"
+                        id="password"
+                        placeholder="Enter password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                </div>
 
-            <button type="submit" className="btn btn-primary">Sign In</button>
-        </form>
+                <button type="submit" style={{ marginTop: '10px' }} className="btn btn-primary">Log In</button>
+
+            </form>
+            <button onClick={signUp} style={{ marginTop: '10px' }} className="btn btn-primary">Sign Up</button>
+        </div>
+
     );
 };
 
